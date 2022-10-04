@@ -38,7 +38,7 @@ public class Books {
 
     @Override
     public String toString() {
-        return "Books{" + "authors=" + Arrays.toString(authors) + ", caption=" + caption + '}';
+        return "Books caption is:" + caption+", "+ "author is " + Arrays.toString(authors) ;
     }
 
     public void setAuthors(Author author) {
