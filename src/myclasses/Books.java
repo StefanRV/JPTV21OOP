@@ -12,7 +12,7 @@ import java.util.Arrays;
  * @author pupil
  */
 public class Books {
-    private Author[] authors;
+    private Author[] authors = new Author[0];
     private String caption;
     public Books() {
         
@@ -26,7 +26,12 @@ public class Books {
         this.authors = authors;
     }
 
-  
+    public void addAuthor(Author author){
+        int countAuthors = this.authors.length;
+        Author[] newAuthors = Arrays.copyOf(this.authors, countAuthors+1);
+        newAuthors[countAuthors] = author;
+        this.authors = newAuthors;
+    }
 
     public String getCaption() {
         return caption;
@@ -41,9 +46,7 @@ public class Books {
         return "Books caption is:" + caption+", "+ "author is " + Arrays.toString(authors) ;
     }
 
-    public void setAuthors(Author author) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+  
 
     
     
